@@ -1,4 +1,3 @@
-// Home.js
 import React, { useState, useEffect } from "react";
 import { Form, Button, Table } from "react-bootstrap";
 import axios from "axios";
@@ -13,7 +12,7 @@ const Home = () => {
     const fetchGames = async () => {
       try {
         const response = await axios.get(
-          "https://cors.bridged.cc/https://www.freetogame.com/api/games"
+          "https://cors.bridged.cc/https://www.freetogame.com/api/games?platform=browser&category=mmorpg"
         );
         setGames(response.data);
         setFilteredGames(response.data);
@@ -25,9 +24,13 @@ const Home = () => {
     fetchGames();
   }, []);
 
-  const handleSearch = (event) => {
+  const handleSearch = async (event) => {
     const search = event.target.value.trim().toLowerCase();
     setSearchItem(search);
+    
+    // Introducing a delay
+    await new Promise((resolve) => setTimeout(resolve, 300)); // Wait for 300 milliseconds
+
     const filtered = games.filter(
       (game) => game.title && game.title.toLowerCase().includes(search)
     );
