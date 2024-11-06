@@ -68,7 +68,6 @@ This Progressive Web Application (PWA) utilizes advanced web capabilities to pro
 - **JavaScript**: Provides core logic and interactive features.
 - **Service Workers**: Enable offline functionality and caching.
 - **Manifest File**: Configures installation options and app appearance.
-- **Responsive CSS**: Adapts the design to different device sizes.
 
 ---
 
